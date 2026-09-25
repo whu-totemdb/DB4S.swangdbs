@@ -1,0 +1,465 @@
+/* 这是模拟@elastic/react-search-ui-views/lib/styles/styles.css的样式文件 */
+
+/* 布局组件 */
+.sui-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sui-layout-header {
+  padding: 32px 24px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sui-layout-body {
+  display: flex;
+}
+
+.sui-layout-body__inner {
+  width: 100%;
+  display: flex;
+  padding: 0 24px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sui-layout-main {
+  flex: 1;
+}
+
+.sui-layout-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.sui-layout-main-body {
+  padding-top: 32px;
+}
+
+.sui-layout-sidebar {
+  flex: 0 0 30%;
+  padding: 32px 32px 0 0;
+}
+
+@media (max-width: 800px) {
+  .sui-layout-body__inner {
+    flex-direction: column;
+  }
+
+  .sui-layout-sidebar {
+    flex: 0;
+    padding: 0;
+    padding-top: 32px;
+  }
+}
+
+/* 结果组件 */
+.sui-result {
+  list-style: none;
+  padding: 24px 0;
+  text-decoration: none;
+  border-bottom: 1px solid #eeeeee;
+  display: block;
+}
+
+.sui-result:last-child {
+  border-bottom: 0;
+}
+
+.sui-result em {
+  background: yellow;
+  font-style: normal;
+}
+
+.sui-result__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sui-result__title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #3a56e4;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.sui-result__title-link {
+  color: #3a56e4;
+  text-decoration: none;
+}
+
+.sui-result__title-link:hover {
+  color: #1a2e9d;
+  text-decoration: underline;
+}
+
+.sui-result__key-value-pair {
+  display: flex;
+  font-size: 14px;
+}
+
+.sui-result__key {
+  font-weight: 600;
+  color: #777;
+  margin-right: 8px;
+}
+
+.sui-result__value {
+  font-weight: normal;
+}
+
+.sui-results-container {
+  padding: 0;
+  list-style: none;
+}
+
+.sui-results-per-page {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.sui-results-per-page__label {
+  margin-right: 8px;
+}
+
+.sui-results-per-page__select {
+  appearance: none;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  background: white;
+  color: #666;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.sui-result__details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sui-result__details > * {
+  flex: 0 1 50%;
+  padding-right: 32px;
+  margin-top: 16px;
+}
+
+.sui-results-container {
+  padding: 0;
+}
+
+.sui-results-container + .sui-results-container {
+  margin-top: 32px;
+}
+
+/* 搜索框组件 */
+.sui-search-box {
+  display: inline-block;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+.sui-search-box__wrapper {
+  display: flex;
+  position: relative;
+  height: 40px;
+  align-items: center;
+}
+
+.sui-search-box__text-input {
+  padding: 0 16px 0 48px;
+  height: 40px;
+  width: 100%;
+  box-shadow: none;
+  font-family: inherit;
+  border-radius: 4px;
+  border: 1px solid #dfe1e5;
+  outline: none;
+  position: relative;
+  font-size: 14px;
+}
+
+.sui-search-box__text-input:hover {
+  border-color: #bbb;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sui-search-box__text-input:focus {
+  border-color: #3a56e4;
+  box-shadow: 0px 0px 0px 1px #3a56e4;
+}
+
+.sui-search-box__submit {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.sui-search-box__submit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sui-search-box__submit-icon path {
+  fill: #999;
+}
+
+.sui-search-box__clear {
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.sui-search-box__clear-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sui-search-box__clear-icon path {
+  fill: #999;
+}
+
+/* Facet组件 */
+.sui-facet {
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+
+.sui-facet__title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8b9bad;
+  letter-spacing: 1px;
+  padding: 0 0 12px;
+}
+
+.sui-facet__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sui-facet__count {
+  color: #888;
+  font-size: 0.85em;
+  margin-left: 20px;
+  display: inline-block;
+  padding-top: 2px;
+}
+
+.sui-multi-checkbox-facet {
+  color: #333;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.sui-multi-checkbox-facet__option-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 0;
+  font-weight: normal;
+}
+
+.sui-multi-checkbox-facet__option-input {
+  margin-right: 8px;
+  height: 18px;
+  width: 18px;
+}
+
+.sui-multi-checkbox-facet__option-label:hover {
+  color: #3a56e4;
+}
+
+.sui-multi-checkbox-facet__option-count {
+  color: #888;
+  font-size: 0.85em;
+  margin-left: 6px;
+}
+
+.sui-facet-search {
+  margin-top: 10px;
+}
+
+.sui-facet-search__text-input {
+  width: 100%;
+  height: 30px;
+  padding: 0 30px 0 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.85em;
+  box-sizing: border-box;
+}
+
+/* Paging组件 */
+.sui-paging {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.sui-paging li {
+  list-style-type: none;
+}
+
+.sui-paging-info {
+  color: #666;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.sui-pagination {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.sui-pagination__item {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.sui-pagination__item:last-child {
+  margin-right: 0;
+}
+
+.sui-pagination__item--active {
+  border-color: #3a56e4;
+  background: #3a56e4;
+}
+
+.sui-pagination__link {
+  color: #666;
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.sui-pagination__item--active .sui-pagination__link {
+  color: white;
+}
+
+/* 暗色模式 */
+.sui-search--dark .sui-search-box__text-input {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.sui-search--dark .sui-search-box__text-input:focus {
+  border-color: #4d69e9;
+  box-shadow: 0px 0px 0px 1px #4d69e9;
+}
+
+.sui-search--dark .sui-result {
+  border-bottom-color: #333;
+}
+
+.sui-search--dark .sui-result__title {
+  color: #4d69e9;
+}
+
+.sui-search--dark .sui-facet__title {
+  color: #a0aec0;
+}
+
+.sui-search--dark .sui-multi-checkbox-facet__option-label {
+  color: #ddd;
+}
+
+.sui-search--dark .sui-multi-checkbox-facet__option-label:hover {
+  color: #4d69e9;
+}
+
+.sui-search--dark .sui-multi-checkbox-facet__option-count {
+  color: #aaa;
+}
+
+.sui-search--dark .sui-facet-search__text-input {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.sui-search--dark .sui-pagination__item {
+  border-color: #333;
+  background-color: #222;
+}
+
+.sui-search--dark .sui-pagination__item--active {
+  border-color: #4d69e9;
+  background-color: #4d69e9;
+}
+
+.sui-search--dark .sui-pagination__link {
+  color: #ddd;
+}
+
+.sui-search--dark .sui-paging-info {
+  color: #aaa;
+}
+
+/* 通用样式覆盖 */
+button, input, select {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 动画 */
+@keyframes sui-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sui-fade-in {
+  animation: sui-fade-in 0.3s ease-in-out;
+}
+
+.sui-search-error {
+  padding: 16px;
+  background-color: #fff2f2;
+  border: 1px solid #ffcaca;
+  border-radius: 4px;
+  color: #d8000c;
+  margin-bottom: 16px;
+}
+
+.sui-result__image-container {
+  margin-right: 24px;
+  flex: 0 0 100px;
+}
+
+.sui-result__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+} 

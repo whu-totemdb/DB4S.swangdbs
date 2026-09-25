@@ -1,0 +1,727 @@
+/* 这是模拟@elastic/react-search-ui-views/lib/styles/styles.css的样式文件 */
+
+/* 布局组件 */
+.sui-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--sui-text-color);
+  background-color: var(--sui-background-color);
+  height: 100%;
+}
+
+.sui-layout-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--sui-border-color);
+}
+
+.sui-layout-body {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.sui-layout-body__inner {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.sui-layout-main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sui-layout-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--sui-border-color);
+  flex-shrink: 0;
+}
+
+.sui-layout-main-body {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.sui-layout-sidebar {
+  flex: 0 0 250px;
+  padding: 1rem;
+  border-right: 1px solid var(--sui-border-color);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+  .sui-layout-body__inner {
+    flex-direction: column;
+  }
+
+  .sui-layout-sidebar {
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--sui-border-color);
+    max-height: 300px;
+  }
+}
+
+/* 结果组件 */
+.sui-results-container {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.sui-result {
+  border: 1px solid var(--sui-border-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background-color: var(--sui-background-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sui-result:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sui-result:last-child {
+  margin-bottom: 0;
+}
+
+.sui-result em {
+  background: rgba(255, 241, 118, 0.3);
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.sui-search--dark .sui-result em {
+  background: rgba(255, 241, 118, 0.2);
+  color: #fff;
+}
+
+.sui-result__header {
+  margin-bottom: 0.75rem;
+}
+
+.sui-result__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.sui-result__title-link {
+  color: #3a56e4;
+  text-decoration: none;
+}
+
+.sui-result__title-link:hover {
+  text-decoration: underline;
+}
+
+/* 学术论文元数据样式 */
+.sui-result__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.sui-result__doc-type {
+  font-weight: 600;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.sui-result__year {
+  color: #1f2937;
+}
+
+.sui-result__venue {
+  font-style: italic;
+}
+
+.sui-result__publisher {
+  color: #6b7280;
+}
+
+.sui-result__citations {
+  color: #3a56e4;
+  font-weight: 500;
+}
+
+/* 摘要部分 */
+.sui-result__abstract {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.25rem;
+}
+
+.sui-result__abstract h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.sui-result__abstract p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* 详细信息部分 */
+.sui-result__details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.sui-result__key-value-pair {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.sui-result__key {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #4b5563;
+  flex-shrink: 0;
+}
+
+.sui-result__value {
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.sui-result__doi-link {
+  color: #3a56e4;
+  text-decoration: none;
+}
+
+.sui-result__doi-link:hover {
+  text-decoration: underline;
+}
+
+/* 按钮样式 */
+.sui-result__actions {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sui-result__button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.sui-result__button--primary {
+  background-color: #3a56e4;
+  color: white;
+  border: none;
+}
+
+.sui-result__button--primary:hover {
+  background-color: #2a46d4;
+  transform: translateY(-1px);
+}
+
+/* 结果状态显示 */
+.sui-results__empty {
+  padding: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px dashed #d1d5db;
+}
+
+/* 分页组件 */
+.sui-paging {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sui-pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sui-pagination__item {
+  margin: 0 0.25rem;
+}
+
+.sui-pagination__item--active {
+  font-weight: bold;
+}
+
+.sui-pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.5rem;
+  border: 1px solid var(--sui-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--sui-background-color);
+  color: var(--sui-text-color);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sui-pagination__item--active .sui-pagination__link {
+  background-color: #3a56e4;
+  border-color: #3a56e4;
+  color: white;
+}
+
+.sui-pagination__link:hover:not([disabled]) {
+  background-color: #f3f4f6;
+}
+
+.sui-pagination__link[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Facet 组件 */
+.sui-facets {
+  margin-bottom: 1.5rem;
+}
+
+.sui-facets__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.sui-facets__selected {
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sui-facets__selected-title {
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.sui-facets__selected-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sui-facets__selected-item {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.sui-facets__remove-button {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #6b7280;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.sui-facets__remove-button:hover {
+  color: #ef4444;
+}
+
+.sui-facets__clear-button {
+  background: none;
+  border: none;
+  color: #3a56e4;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.sui-facets__clear-button:hover {
+  color: #2a46d4;
+}
+
+.sui-facet {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sui-facet:last-child {
+  border-bottom: none;
+}
+
+.sui-facet__title-button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sui-facet__title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+}
+
+.sui-facet__count {
+  color: #6b7280;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.sui-facet__arrow {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.sui-facet__arrow--open {
+  transform: rotate(180deg);
+}
+
+.sui-facet__content {
+  margin-top: 0.5rem;
+}
+
+.sui-facet__search {
+  margin-bottom: 0.75rem;
+}
+
+.sui-facet__search-input {
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.sui-facet__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.sui-facet__item {
+  margin-bottom: 0.25rem;
+}
+
+.sui-facet__item-label {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.sui-facet__item-label:hover {
+  background-color: #f3f4f6;
+}
+
+.sui-facet__item-label--selected {
+  background-color: #ebf5ff;
+}
+
+.sui-facet__checkbox {
+  margin-right: 0.5rem;
+}
+
+.sui-facet__item-value {
+  flex-grow: 1;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sui-facet__item-count {
+  font-size: 0.75rem;
+  color: #6b7280;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+/* 其他助手组件 */
+.sui-sorting {
+  margin-bottom: 1.5rem;
+}
+
+.sui-results-per-page {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.sui-results-per-page__label {
+  margin-right: 0.5rem;
+}
+
+.sui-results-per-page__select {
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+  border: 1px solid var(--sui-border-color);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background-color: var(--sui-background-color);
+  color: var(--sui-text-color);
+}
+
+.sui-select {
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+  border: 1px solid var(--sui-border-color);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background-color: var(--sui-background-color);
+  color: var(--sui-text-color);
+}
+
+.sui-results-summary {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.sui-paging-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.sui-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.sui-loading__loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3a56e4;
+  border-radius: 50%;
+  animation: sui-loading 1s linear infinite;
+}
+
+.sui-loading__message {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.sui-search-error {
+  padding: 2rem;
+  text-align: center;
+  color: #b91c1c;
+  background-color: #fee2e2;
+  border-radius: 0.5rem;
+}
+
+@keyframes sui-loading {
+  to { transform: rotate(360deg); }
+}
+
+/* 暗黑模式支持 */
+.sui-search--dark {
+  --sui-border-color: #4a5568;
+  --sui-background-color: #1f2937;
+  --sui-text-color: #e5e7eb;
+}
+
+.sui-search--dark .sui-result__title-link {
+  color: #93c5fd;
+}
+
+.sui-search--dark .sui-result__abstract {
+  background-color: #111827;
+}
+
+.sui-search--dark .sui-result__doc-type {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.sui-search--dark .sui-result__year,
+.sui-search--dark .sui-result__abstract p,
+.sui-search--dark .sui-result__value {
+  color: #e5e7eb;
+}
+
+.sui-search--dark .sui-result__key,
+.sui-search--dark .sui-result__abstract h4 {
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-result__publisher {
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-result__citations,
+.sui-search--dark .sui-result__doi-link {
+  color: #93c5fd;
+}
+
+.sui-search--dark .sui-result__button--primary {
+  background-color: #4d69e9;
+}
+
+.sui-search--dark .sui-result__button--primary:hover {
+  background-color: #6080f9;
+}
+
+.sui-search--dark .sui-results__empty {
+  background-color: #111827;
+  border-color: #4b5563;
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-facets__title {
+  color: #e5e7eb;
+}
+
+.sui-search--dark .sui-facets__selected {
+  background-color: #374151;
+}
+
+.sui-search--dark .sui-facets__selected-title {
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-facets__selected-item {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+.sui-search--dark .sui-facets__clear-button {
+  color: #93c5fd;
+}
+
+.sui-search--dark .sui-facet {
+  border-color: #374151;
+}
+
+.sui-search--dark .sui-facet__title {
+  color: #e5e7eb;
+}
+
+.sui-search--dark .sui-facet__count {
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-facet__search-input {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.sui-search--dark .sui-facet__item-label:hover {
+  background-color: #374151;
+}
+
+.sui-search--dark .sui-facet__item-label--selected {
+  background-color: #1e3a8a;
+}
+
+.sui-search--dark .sui-loading__loader {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: #93c5fd;
+}
+
+.sui-search--dark .sui-loading__message {
+  color: #9ca3af;
+}
+
+.sui-search--dark .sui-pagination__link:hover:not([disabled]) {
+  background-color: #374151;
+}
+
+.sui-search--dark .sui-search-error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+/* 通用样式覆盖 */
+button, input, select {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 动画 */
+@keyframes sui-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sui-fade-in {
+  animation: sui-fade-in 0.3s ease-in-out;
+}
+
+.sui-result__image-container {
+  margin-right: 24px;
+  flex: 0 0 100px;
+}
+
+.sui-result__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+} 
